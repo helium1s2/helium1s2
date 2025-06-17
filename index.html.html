@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chúc mừng sinh nhật anh Vương 💖</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      padding: 50px;
+      color: #e91e63;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 1px 1px 3px #f48fb1;
+    }
+
+    .marquee {
+      font-size: 1.5em;
+      color: #c2185b;
+      margin-bottom: 20px;
+      animation: slideText 10s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes slideText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 10px auto;
+      max-width: 600px;
+      background-color: #fce4ec;
+      padding: 15px 25px;
+      border-radius: 15px;
+      color: #880e4f;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1.2em;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3);
+      transition: background-color 0.3s ease;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #ad1457;
+    }
+
+    /* Floating emojis */
+    .floating {
+      position: fixed;
+      bottom: -50px;
+      font-size: 2em;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">🎉🎉 Chúc mừng sinh nhật anh Vương yêu dấu!!! 🎂🎈</div>
+  <h1>Xin chào anh iu 💖</h1>
+  <p>Yêu anh cũng siêu cấp luôn nha 💕</p>
+  <p>Em chúc anh luôn vui vẻ, iu đời, mạnh khỏe và thật thành công trong mọi việc nè kể cả iu em✨</p>
+  <p>Mong tụi mình sẽ luôn yêu thương, quan tâm nhau nhiều hơn từng ngày nhaaa 💑</p>
+
+  <button onclick="showLove()">Bấm vào đây nè anh bé 💌</button>
+
+  <!-- Floating emojis container -->
+  <div id="emoji-container"></div>
+
+  <script>
+    function showLove() {
+      alert("Hằng yêu anh Vương nhìu nhìu lắmmmm! 💕 Gitchee Gitchee Goo (học được trong Phineas and Ferb nghĩa là I Love U) hehe 😘");
+    }
+
+    // Floating emoji effect
+    const emojis = ['❤️', '🎂', '🎆'];
+    const container = document.getElementById('emoji-container');
+
+    setInterval(() => {
+      const emoji = document.createElement('div');
+      emoji.classList.add('floating');
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      container.appendChild(emoji);
+
+      setTimeout(() => emoji.remove(), 8000); // Remove after animation
+    }, 300);
+  </script>
+</body>
+</html>
